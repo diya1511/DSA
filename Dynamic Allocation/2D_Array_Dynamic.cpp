@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
 
     int row;
     cin >> row;
@@ -9,38 +10,44 @@ int main() {
     int col;
     cin >> col;
 
-    //creating a 2D array
-    int** arr = new int*[row];
-    for(int i=0; i<row; i++) {
+    // creating a 2D array
+    int **arr = new int *[row];
+    for (int i = 0; i < row; i++)
+    {
         arr[i] = new int[col];
     }
 
-    //taking input
-    for(int i=0; i<row; i++) {
-        for(int j=0; j<col; j++) {
+    // taking input
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
             cin >> arr[i][j];
         }
     }
 
-    //taking output
+    // taking output
     cout << endl;
-    for(int i=0; i<row; i++) {
-        for(int j=0; j<col; j++) {
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
             cout << arr[i][j] << " ";
-        } cout << endl;
+        }
+        cout << endl;
     }
 
+    // releasing memory
+    for (int i = 0; i < row; i++)
+    {
+        delete[] arr[i];
+    }
 
-    //releasing memory
-    for(int i=0; i<row; i++) {
-        delete [] arr[i];
-    }   
+    delete[] arr;
 
-    delete []arr;
-
-    //how to create a 2D array dynamically
-    //input/Output
-    //memory free kaise karani hai 
+    // how to create a 2D array dynamically
+    // input/Output
+    // memory free kaise karani hai
 
     return 0;
 }
